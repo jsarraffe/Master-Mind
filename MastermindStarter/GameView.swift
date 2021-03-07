@@ -8,6 +8,10 @@
 import SwiftUI
 
 struct GameView: View {
+    
+    @ObservedObject var viewModel = MasterMindViewModel()
+    
+    
     var body: some View {
         GeometryReader { geometry in
             body(geometry)
@@ -18,7 +22,7 @@ struct GameView: View {
     func body(_ geometry: GeometryProxy) -> some View {
         print(geometry.size)
         
-        let colors: [Color] = [.blue, .yellow, .purple, .red, .green, .black, .gray]
+        let colors: [Color] = [.blue, .yellow, .purple, .red, .green, .black, .gray,.clear]
         
         let paletteAreaWidth = geometry.size.width * 0.20            // 20% goes to palette
         let guessAreaWidth = geometry.size.width - paletteAreaWidth

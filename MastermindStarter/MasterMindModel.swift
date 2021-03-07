@@ -11,30 +11,59 @@ struct MasterMindModel{
     
     let maxRows = 9
     var guessRows = [[Int]]()
-    var currlevel: Int = 0
-    var colors :[Int:String]
+    var currlevel: Int = 1
+    var colors :[Int] = []
     var solutions: [Int] = []
+    
+    var currentSelectedColor: Int  = 1
+    
+    func getColor()->Int{return self.currentSelectedColor }
+    mutating func setColor(newVal: Int){self.currentSelectedColor = newVal }
+    
+    var currentLevel: Int {
+        get {return currlevel}
+        set {currlevel = newValue}
+    }
     
 
     
     init() {
         
-        colors = [1:"Blue",2:"Yello",3:"Purple",4:"Red",5:"Green",6:"Black",7:"Grey", 8:"Clear"]
+        colors = [0,1,2,3,4,5,6,7]
+        currentLevel = currlevel
         
         for i in 0..<currlevel{
-            guessRows.append([i])
+            guessRows.append([])
             for _ in 0..<4{
-                guessRows[i].append(8)
+                guessRows[i].append(7)
             }
         }
         self.solutions = randomGoal()
-        
-        
-        
     }
-    mutating func populateGuess(color: Int, position: Int){
-        guessRows[currlevel][position] = color
+    mutating func populateGuess(position: Int){
+        
+        guessRows[currentLevel-1][position] = currentSelectedColor
+        print(position)
     }
+    
+    
+    func printGuessRow(){
+        print(guessRows)
+    }
+    
+    
+    
+    var guesses: [Int] = []
+   mutating func getLevelColors() ->[Int]{
+    guesses = []
+        for i in 0..<4{
+            guesses.append(guessRows[currentLevel-1][i])
+        }
+    return guesses
+    
+   }
+    
+    
     
     func randomGoal() -> [Int]{
         var randomColors: [Int] = []
@@ -44,6 +73,7 @@ struct MasterMindModel{
         }
         return randomColors
     }
+    
     
     func checkGuess() -> (Int, Int){
         
@@ -63,6 +93,13 @@ struct MasterMindModel{
         }
         return (red, clear)
         
+    }
+    
+   
+    
+    enum Colors {
+        case blue, yellow, purple, red, green, black, gray, clear
+            
     }
 }
 

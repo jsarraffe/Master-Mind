@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "F90FF213-37F2-405B-AE49-0A79BC8AA567"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BCFB639E-7E48-4E4F-AA90-2233F2AAD234"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MastermindStarter/Views/GuessArea.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "BCFB639E-7E48-4E4F-AA90-2233F2AAD234 - ae0ec93deb68139f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; SwiftUI.ForEach&lt;Swift.Range&lt;Swift.Int&gt;, Swift.Int, SwiftUI.Button&lt;MastermindStarter.GameCircle&gt;&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.HStack&lt;SwiftUI.ForEach&lt;Swift.Range&lt;Swift.Int&gt;, Swift.Int, SwiftUI.Button&lt;MastermindStarter.GameCircle&gt;&gt;&gt;, MastermindStarter.FeedbackArea)&gt; in MastermindStarter.GuessRow.body.getter : some"
+                  moduleName = "MastermindStarter"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jsarraffe/Desktop/Development/MastermindStarter/MastermindStarter/Views/GuessArea.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "58"
+                  endingLineNumber = "58"
+                  offsetFromSymbolStart = "213">
+               </Location>
+               <Location
+                  uuid = "BCFB639E-7E48-4E4F-AA90-2233F2AAD234 - a557e81d3573ba2d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Int) -&gt; SwiftUI.Button&lt;MastermindStarter.GameCircle&gt; in closure #1 () -&gt; SwiftUI.ForEach&lt;Swift.Range&lt;Swift.Int&gt;, Swift.Int, SwiftUI.Button&lt;MastermindStarter.GameCircle&gt;&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.HStack&lt;SwiftUI.ForEach&lt;Swift.Range&lt;Swift.Int&gt;, Swift.Int, SwiftUI.Button&lt;MastermindStarter.GameCircle&gt;&gt;&gt;, MastermindStarter.FeedbackArea)&gt; in MastermindStarter.GuessRow.body.getter : some"
+                  moduleName = "MastermindStarter"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jsarraffe/Desktop/Development/MastermindStarter/MastermindStarter/Views/GuessArea.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "59"
+                  endingLineNumber = "59"
+                  offsetFromSymbolStart = "226">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

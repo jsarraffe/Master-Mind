@@ -13,6 +13,7 @@ struct GameCircle: View, Identifiable {
     let id: Int
     
     var body: some View {
+        
         Circle()
                 .strokeBorder(Color.black,lineWidth: 4)
                 .background(Circle().foregroundColor(color))
