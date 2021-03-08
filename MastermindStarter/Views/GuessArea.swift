@@ -1,15 +1,18 @@
+  
 //
 //  GuessArea.swift
 //  MastermindStarter
 //
 //  Created by Ali A. Kooshesh on 3/3/21.
 //
-
 import SwiftUI
 
 let colorsList: [Color] = [.blue, .yellow, .purple, .red, .green, .black, .gray, .clear]
 
 struct GuessArea: View {
+    
+    
+    @ObservedObject var viewModel = MasterMindViewModel.sharedView
 
     var currentGameRow: [Int] = []
     let circleDiameter: CGFloat
@@ -20,14 +23,17 @@ struct GuessArea: View {
         circleDiameter = diameter
         
         
-     
-        guessLevels.append(GuessRow(circleDiameter: circleDiameter, colors: fourBlankCircles(), id: 0))
+        for i in 0..<9{
+    
+            guessLevels.append(GuessRow(circleDiameter: circleDiameter, colors: fourBlankCircles(), id: i))
+        }
+        
     }
     var body: some View {
         VStack {
             Spacer()
 
-            ForEach( 0..<guessLevels.count ) { idx in
+            ForEach( 0..<viewModel.model.guessRows.count, id: \.self ) { idx in
                 VStack {
                     Divider()
                     guessViewFor(level: idx)
@@ -39,34 +45,45 @@ struct GuessArea: View {
 //        print("guessViewFor level \(level), size: \(size) ")
         return  guessLevels[level]
     }
-    
     mutating func fourBlankCircles() -> [Color] {
-        currentGameRow = MasterMindViewModel.shared.getLevelColors()
+        currentGameRow = viewModel.model.getLevelColors()
 
-        print(MasterMindViewModel.shared.printGuessRow())
+        print(viewModel.model.printGuessRow())
         return [colorsList[currentGameRow[0]], colorsList[currentGameRow[1]], colorsList[currentGameRow[2]], colorsList[currentGameRow[3]]]
     }
 }
 struct GuessRow: View {
+    
+    @ObservedObject var viewModel = MasterMindViewModel.sharedView
+
     let circleDiameter: CGFloat
     var colors: [Color]
     var id: Int
-    var y = (MasterMindViewModel.shared.getLevelColors())
     var body: some View {
         HStack(spacing: 20.0) {
             HStack {
                 ForEach( 0..<4 ) { idx in
-                    Button(action:{
-                        MasterMindViewModel.shared.populateGuess(position: idx)
-                        print(MasterMindViewModel.shared.getLevelColors())
-                    }){
+                    
+                    if viewModel.model.currentLevel-1 == id{
                         
-                        GameCircle(diameter: circleDiameter, color: colorsList[idx], id: idx)
+                        Button(action:{
+                            MasterMindViewModel.sharedView.guess(column: idx)
+                            print(MasterMindViewModel.sharedView.model.getLevelColors())
+                        }){
+        
+                            GameCircle(diameter: circleDiameter, color: colorsList[viewModel.model.guessRows[id][idx]], id: idx)
+                        }
+
+                    }else{
+                        GameCircle(diameter: circleDiameter, color: colorsList[viewModel.model.guessRows[id][idx]], id: idx)
                     }
+                    
+                    
+
 
                 }
             }
-            FeedbackArea(length: circleDiameter)
+            FeedbackArea(length: circleDiameter, row: id)
         }
     }
 }

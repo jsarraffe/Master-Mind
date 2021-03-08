@@ -31,6 +31,16 @@ struct GameView: View {
         let largeCircleDiameter = guessAreaWidth / CGFloat(numberOfGuessCircles + 2) // one for the feedback and one for spaces in between
         
         return
+            VStack{
+                HStack{
+                ForEach (0..<4) { idx in
+                    GameCircle(diameter: 20, color: colorsList[MasterMindViewModel.sharedView.model.solutions[idx]], id: idx)
+                    
+                  }
+                }
+           
+            
+            
             HStack(alignment: .center) {
                 PaletteArea(colors: colors, circleDiameter: largeCircleDiameter)
                     .frame(width: paletteAreaWidth, height: geometry.size.height, alignment: .center)
@@ -43,6 +53,8 @@ struct GameView: View {
                         .frame(width: guessAreaWidth, height: largeCircleDiameter, alignment: .bottom)
                         .opacity(0.0)
                 }
+                
+             }
             }
     }
     

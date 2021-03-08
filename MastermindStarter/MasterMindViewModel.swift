@@ -10,26 +10,20 @@ import Foundation
 class MasterMindViewModel: ObservableObject{
      
     
-    @Published var theModel = MasterMindModel()
-
-    @Published var currentSelectedColor: Int = 0
+    @Published var currColor: Int = 0
     
     
-    static var shared = MasterMindModel()
+    @Published var model = MasterMindModel()
     
     static var sharedView = MasterMindViewModel()
 
     
     func guess(column : Int) {
     
-//theModel.populateGuess( position: column)
+
+       model.populateGuess( position: column, currentSelectedColor: currColor)
     }
     
- 
 
-    enum Colors {
-        case blue, yellow, purple, red, green, black, gray
-            
-    }
     
 }

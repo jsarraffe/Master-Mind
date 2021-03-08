@@ -15,10 +15,8 @@ struct MasterMindModel{
     var colors :[Int] = []
     var solutions: [Int] = []
     
-    var currentSelectedColor: Int  = 1
+    var feedBack: [(red: Int, clear: Int)] = []
     
-    func getColor()->Int{return self.currentSelectedColor }
-    mutating func setColor(newVal: Int){self.currentSelectedColor = newVal }
     
     var currentLevel: Int {
         get {return currlevel}
@@ -34,16 +32,31 @@ struct MasterMindModel{
         
         for i in 0..<currlevel{
             guessRows.append([])
+            feedBack.append((0,0))
             for _ in 0..<4{
                 guessRows[i].append(7)
+            
             }
         }
         self.solutions = randomGoal()
     }
-    mutating func populateGuess(position: Int){
+    mutating func populateGuess(position: Int, currentSelectedColor: Int){
         
         guessRows[currentLevel-1][position] = currentSelectedColor
-        print(position)
+        printGuessRow()
+    
+        if isLevelFull(){
+            
+            feedBack[currlevel-1] = checkGuess()
+            currlevel += 1
+                guessRows.append([])
+                feedBack.append((0,0))
+                for _ in 0..<4{
+                    guessRows[currlevel-1].append(7)
+                    
+                
+            }
+        }
     }
     
     
@@ -52,14 +65,15 @@ struct MasterMindModel{
     }
     
     
+    func isLevelFull() -> Bool{
+        
+        return !guessRows[currlevel-1].contains(7)
+        
+        
+    }
     
-    var guesses: [Int] = []
    mutating func getLevelColors() ->[Int]{
-    guesses = []
-        for i in 0..<4{
-            guesses.append(guessRows[currentLevel-1][i])
-        }
-    return guesses
+    return guessRows[currlevel-1]
     
    }
     
@@ -80,12 +94,12 @@ struct MasterMindModel{
         var red: Int = 0
         var clear: Int = 0
         
-        for i in guessRows[currlevel]{
-            if guessRows[currlevel][i] == solutions[i] {
+        for i in 0..<guessRows[currlevel-1].count{
+            if guessRows[currlevel-1][i] == solutions[i] {
                 red += 1
             }
             else{
-                if solutions.contains(guessRows[currlevel][i]){
+                if solutions.contains(guessRows[currlevel-1][i]){
                     clear += 1
                 }
             }
@@ -94,9 +108,7 @@ struct MasterMindModel{
         return (red, clear)
         
     }
-    
-   
-    
+
     enum Colors {
         case blue, yellow, purple, red, green, black, gray, clear
             

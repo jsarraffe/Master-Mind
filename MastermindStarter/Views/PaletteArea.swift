@@ -14,14 +14,16 @@ struct PaletteArea: View {
     let circleDiameter: CGFloat
     
     var body: some View {
-                
+    
         return VStack(alignment: .leading, spacing: 10) {
             ForEach( 0..<colors.count ) { colorIdx in
                 Button(action:{
-                    MasterMindViewModel.sharedView.currentSelectedColor = colorIdx
-                    print( MasterMindViewModel.sharedView.currentSelectedColor)
+                    MasterMindViewModel.sharedView.currColor = colorIdx
+                    print ("Current Color is \(MasterMindViewModel.sharedView.currColor)")
+                  
                 }){
                     GameCircle(diameter: circleDiameter, color: colors[colorIdx], id: colorIdx)
+                    
                 }
 
                 
