@@ -1,10 +1,10 @@
+
 //
 //  MasterMindModel.swift
 //  MastermindStarter
 //
 //  Created by Jacques Sarraffe on 3/6/21.
 //
-
 import Foundation
 
 struct MasterMindModel{
@@ -118,4 +118,3 @@ struct MasterMindModel{
             
     }
 }
-

@@ -48,7 +48,6 @@ struct GuessArea: View {
                         
                         guessViewFor(level: idx)
 
-                    
                 }
             }
         }
