@@ -34,23 +34,30 @@ struct GuessArea: View {
         
     }
     var body: some View {
-        
         VStack {
             if viewModel.model.didWin == true{
-                Text("CONGRATS U FUCKING WON...NOTHING U WAISTED LIFE")
+                Text("You did It")
             }
             Spacer()
+        
 
             ForEach( (0..<viewModel.model.guessRows.count).reversed(), id: \.self ) { idx in
                 VStack (alignment: .leading, spacing: 20.0) {
                     Divider()
-                    guessViewFor(level: idx)
+                    
+                        
+                        guessViewFor(level: idx)
+
+                    
                 }
             }
         }
     }
     func guessViewFor(level: Int) -> some View {
 //        print("guessViewFor level \(level), size: \(size) ")
+        if level == 9{
+            Text("Reset")
+        }
         return  guessLevels[level]
     }
     mutating func fourBlankCircles() -> [Color] {
@@ -72,7 +79,7 @@ struct GuessRow: View {
             HStack {
                 ForEach( 0..<4 ) { idx in
                     
-                    if viewModel.model.currentLevel-1 == id{
+                    if viewModel.model.currentLevel-1 == id && viewModel.model.didWin != true{
                         
                         Button(action:{
                             MasterMindViewModel.sharedView.guess(column: idx)

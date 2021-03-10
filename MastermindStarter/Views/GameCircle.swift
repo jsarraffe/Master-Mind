@@ -18,7 +18,7 @@ struct GameCircle: View, Identifiable {
                 .strokeBorder(Color.black,lineWidth: 4)
                 .background(Circle().foregroundColor(color))
                 .frame(width: diameter, height: diameter)
-            
+            .rotationEffect(.degrees(12))
     }
 
 }

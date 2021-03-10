@@ -21,8 +21,6 @@ struct GameView: View {
             }
             .padding()
     
-            Text("Yessir you Fucking DID it")
-                .bold()
        // }
         
       

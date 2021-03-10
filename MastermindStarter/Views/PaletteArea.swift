@@ -19,23 +19,24 @@ struct PaletteArea: View {
         
     
         return VStack(alignment: .leading, spacing: 10) {
-            GameCircle(diameter: circleDiameter, color: colorsList[viewModel.currColor], id: 999)
-            Divider()
-            Divider()
-            Divider()
-            Divider()
+            GameCircle(diameter: 50.0, color: colorsList[viewModel.currColor], id: 999)
+          
+            Spacer(minLength: 10.0)
+            
             ForEach( 0..<colors.count-1 ) { colorIdx in
                 Button(action:{
                     MasterMindViewModel.sharedView.currColor = colorIdx
                     print ("Current Color is \(MasterMindViewModel.sharedView.currColor)")
                   
                 }){
-                    GameCircle(diameter: circleDiameter, color: colors[colorIdx], id: colorIdx)
+                    GameCircle(diameter: 25, color: colors[colorIdx], id: colorIdx)
                     
                 }
 
                 
             }
+            Spacer()
         }
+      
     }
 }
