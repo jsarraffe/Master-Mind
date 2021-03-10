@@ -9,7 +9,7 @@ import SwiftUI
 
 struct GameView: View {
     
-    @ObservedObject var viewModel = MasterMindViewModel()
+    @ObservedObject var viewModel = MasterMindViewModel.viewForGame
     
     
     var body: some View {
