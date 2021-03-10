@@ -35,7 +35,9 @@ struct GuessArea: View {
     }
     var body: some View {
         VStack {
-           
+            if viewModel.model.didWin == true{
+                Text("You did It")
+            }
             Spacer()
         
 
@@ -46,13 +48,16 @@ struct GuessArea: View {
                         
                         guessViewFor(level: idx)
 
+                    
                 }
             }
         }
     }
     func guessViewFor(level: Int) -> some View {
 //        print("guessViewFor level \(level), size: \(size) ")
-        
+        if level == 9{
+            Text("Reset")
+        }
         return  guessLevels[level]
     }
     mutating func fourBlankCircles() -> [Color] {
@@ -85,7 +90,12 @@ struct GuessRow: View {
                         }
 
                     }else{
-                        GameCircle(diameter: circleDiameter, color: colorsList[viewModel.model.guessRows[id][idx]], id: idx)
+                        if viewModel.model.didWin == true{
+                            GameCircle(diameter: circleDiameter, color: colorsList[viewModel.model.guessRows[id][idx]], id: idx)
+                            
+                        }
+                       
+                        
                     }
                     
                     

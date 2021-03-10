@@ -18,7 +18,7 @@ struct MasterMindModel{
     
     var feedBack: [(red: Int, clear: Int)] = []
     
-    
+    static var sharedModel = MasterMindModel()
     var currentLevel: Int {
         get {return currlevel}
         set {currlevel = newValue}
@@ -113,8 +113,9 @@ struct MasterMindModel{
         
     }
 
-    enum Colors {
-        case blue, yellow, purple, red, green, black, gray, clear
-            
+    
+    mutating func reset(){
+        MasterMindModel.sharedModel = MasterMindModel()
     }
+
 }

@@ -16,8 +16,11 @@ class MasterMindViewModel: ObservableObject{
     @Published var model = MasterMindModel()
     
     
-    static var sharedView = MasterMindViewModel()
+    static var sharedView : MasterMindViewModel = {
+        return MasterMindViewModel()
+    }()
 
+    
     
     func guess(column : Int) {
     
@@ -30,9 +33,12 @@ class MasterMindViewModel: ObservableObject{
     }
     
     func reset(){
-        model = MasterMindModel()
-        
+      
+        MasterMindViewModel.sharedView = MasterMindViewModel()
+    
     }
+    
+
 
     
 }
