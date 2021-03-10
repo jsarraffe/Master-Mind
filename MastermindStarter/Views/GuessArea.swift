@@ -35,9 +35,7 @@ struct GuessArea: View {
     }
     var body: some View {
         VStack {
-            if viewModel.model.didWin == true{
-                Text("You did It")
-            }
+           
             Spacer()
         
 
@@ -54,9 +52,7 @@ struct GuessArea: View {
     }
     func guessViewFor(level: Int) -> some View {
 //        print("guessViewFor level \(level), size: \(size) ")
-        if level == 9{
-            Text("Reset")
-        }
+        
         return  guessLevels[level]
     }
     mutating func fourBlankCircles() -> [Color] {

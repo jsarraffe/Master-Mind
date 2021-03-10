@@ -15,6 +15,7 @@ class MasterMindViewModel: ObservableObject{
     
     @Published var model = MasterMindModel()
     
+    
     static var sharedView = MasterMindViewModel()
 
     
@@ -26,6 +27,11 @@ class MasterMindViewModel: ObservableObject{
     
     func printWin(){
         print(model.didWin)
+    }
+    
+    func reset(){
+        model = MasterMindModel()
+        
     }
 
     

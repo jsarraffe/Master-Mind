@@ -73,7 +73,7 @@ struct MasterMindModel{
         
     }
     
-   mutating func getLevelColors() ->[Int]{
+   func getLevelColors() ->[Int]{
     return guessRows[currlevel-1]
     
    }

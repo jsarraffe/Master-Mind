@@ -9,22 +9,30 @@ import SwiftUI
 
 struct GameView: View {
     
-//    @ObservedObject var viewModel = MasterMindViewModel.sharedView
+    @ObservedObject var viewModel = MasterMindViewModel.sharedView
     
     
     
     var body: some View {
+            
+        if viewModel.model.didWin == true{
+            Text("Congradulluations you One we")
+                .font(.largeTitle)
+            
+            Button(action:{
+                viewModel.reset()
+            }){
+
+                Text("RESET")
+            }
+        }
+            
         
-//        if viewModel.model.didWin == false{
             GeometryReader { geometry in
                 body(geometry)
             }
             .padding()
-    
-       // }
-        
-      
-        
+
         
     }
     
@@ -47,9 +55,6 @@ struct GameView: View {
                     
                   }
                 }
-           
-            
-            
             HStack(alignment: .center) {
                 PaletteArea(colors: colors, circleDiameter: largeCircleDiameter)
                     .frame(width: paletteAreaWidth, height: geometry.size.height, alignment: .center)
