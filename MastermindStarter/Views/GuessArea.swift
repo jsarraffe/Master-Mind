@@ -34,7 +34,11 @@ struct GuessArea: View {
         
     }
     var body: some View {
+        
         VStack {
+            if viewModel.model.didWin == true{
+                Text("CONGRATS U FUCKING WON...NOTHING U WAISTED LIFE")
+            }
             Spacer()
 
             ForEach( (0..<viewModel.model.guessRows.count).reversed(), id: \.self ) { idx in

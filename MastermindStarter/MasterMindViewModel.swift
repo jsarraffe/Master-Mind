@@ -16,7 +16,6 @@ class MasterMindViewModel: ObservableObject{
     @Published var model = MasterMindModel()
     
     static var sharedView = MasterMindViewModel()
-    static var viewForGame = MasterMindViewModel()
 
     
     func guess(column : Int) {

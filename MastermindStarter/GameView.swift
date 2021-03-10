@@ -9,13 +9,13 @@ import SwiftUI
 
 struct GameView: View {
     
-    @ObservedObject var viewModel = MasterMindViewModel.viewForGame
+//    @ObservedObject var viewModel = MasterMindViewModel.sharedView
     
     
     
     var body: some View {
         
-        if viewModel.model.didWin == false{
+//        if viewModel.model.didWin == false{
             GeometryReader { geometry in
                 body(geometry)
             }
@@ -23,7 +23,7 @@ struct GameView: View {
     
             Text("Yessir you Fucking DID it")
                 .bold()
-        }
+       // }
         
       
         
