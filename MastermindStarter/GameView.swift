@@ -12,11 +12,22 @@ struct GameView: View {
     @ObservedObject var viewModel = MasterMindViewModel.viewForGame
     
     
+    
     var body: some View {
-        GeometryReader { geometry in
-            body(geometry)
+        
+        if viewModel.model.didWin == false{
+            GeometryReader { geometry in
+                body(geometry)
+            }
+            .padding()
+    
+            Text("Yessir you Fucking DID it")
+                .bold()
         }
-        .padding()
+        
+      
+        
+        
     }
     
     func body(_ geometry: GeometryProxy) -> some View {

@@ -25,6 +25,9 @@ class MasterMindViewModel: ObservableObject{
        model.populateGuess( position: column, currentSelectedColor: currColor)
     }
     
+    func printWin(){
+        print(model.didWin)
+    }
 
     
 }

@@ -14,6 +14,7 @@ struct MasterMindModel{
     var currlevel: Int = 1
     var colors :[Int] = []
     var solutions: [Int] = []
+    var didWin: Bool = false
     
     var feedBack: [(red: Int, clear: Int)] = []
     
@@ -89,7 +90,7 @@ struct MasterMindModel{
     }
     
     
-    func checkGuess() -> (Int, Int){
+    mutating func checkGuess() -> (Int, Int){
         
         var red: Int = 0
         var clear: Int = 0
@@ -103,7 +104,10 @@ struct MasterMindModel{
                     clear += 1
                 }
             }
-
+            if red >= 4{
+                self.didWin = true
+            }
+            print(didWin)
         }
         return (red, clear)
         

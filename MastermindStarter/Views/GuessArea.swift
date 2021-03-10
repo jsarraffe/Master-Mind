@@ -14,6 +14,8 @@ struct GuessArea: View {
     
     @ObservedObject var viewModel = MasterMindViewModel.sharedView
 
+    
+    
     var currentGameRow: [Int] = []
     let circleDiameter: CGFloat
     var guessLevels = [GuessRow]()
@@ -21,6 +23,8 @@ struct GuessArea: View {
     
     init(diameter: CGFloat) {
         circleDiameter = diameter
+        
+        
         
         
         for i in 0..<9{
