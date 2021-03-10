@@ -83,7 +83,7 @@ struct MasterMindModel{
         var randomColors: [Int] = []
         
         for _ in 0..<4{
-            randomColors.append(Int.random(in: 1...7))
+            randomColors.append(Int.random(in: 0...6))
         }
         return randomColors
     }

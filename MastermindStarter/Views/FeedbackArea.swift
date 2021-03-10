@@ -43,7 +43,7 @@ struct FeedbackArea: View {
         return
             VStack(alignment: .leading) {
   
-                HStack {
+                HStack() {
                     
                     if cols[0] != .clear{
                         Circle()

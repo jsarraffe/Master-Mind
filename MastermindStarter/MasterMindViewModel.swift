@@ -10,7 +10,7 @@ import Foundation
 class MasterMindViewModel: ObservableObject{
      
     
-    @Published var currColor: Int = 0
+    @Published var currColor: Int = 7
     
     
     @Published var model = MasterMindModel()

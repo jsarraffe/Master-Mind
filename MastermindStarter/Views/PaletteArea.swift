@@ -24,7 +24,7 @@ struct PaletteArea: View {
             Divider()
             Divider()
             Divider()
-            ForEach( 0..<colors.count ) { colorIdx in
+            ForEach( 0..<colors.count-1 ) { colorIdx in
                 Button(action:{
                     MasterMindViewModel.sharedView.currColor = colorIdx
                     print ("Current Color is \(MasterMindViewModel.sharedView.currColor)")

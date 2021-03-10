@@ -33,8 +33,8 @@ struct GuessArea: View {
         VStack {
             Spacer()
 
-            ForEach( 0..<viewModel.model.guessRows.count, id: \.self ) { idx in
-                VStack (alignment: .leading) {
+            ForEach( (0..<viewModel.model.guessRows.count).reversed(), id: \.self ) { idx in
+                VStack (alignment: .leading, spacing: 20.0) {
                     Divider()
                     guessViewFor(level: idx)
                 }
