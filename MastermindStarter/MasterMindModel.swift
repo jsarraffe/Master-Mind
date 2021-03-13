@@ -16,20 +16,20 @@ struct MasterMindModel{
     var solutions: [Int] = []
     var didWin: Bool = false
     
+    var maxAttempts = false
+    
     var feedBack: [(red: Int, clear: Int)] = []
     
     static var sharedModel = MasterMindModel()
-    var currentLevel: Int {
-        get {return currlevel}
-        set {currlevel = newValue}
-    }
-    
+   
 
     
     init() {
         
+        didWin = false
         colors = [0,1,2,3,4,5,6,7]
-        currentLevel = currlevel
+        currlevel = 1
+        guessRows = [[]]
         
         for i in 0..<currlevel{
             guessRows.append([])
@@ -43,13 +43,14 @@ struct MasterMindModel{
     }
     mutating func populateGuess(position: Int, currentSelectedColor: Int){
         
-        guessRows[currentLevel-1][position] = currentSelectedColor
+        guessRows[currlevel-1][position] = currentSelectedColor
         printGuessRow()
     
-        if isLevelFull(){
+        if isLevelFull() && currlevel < 9{
             
             feedBack[currlevel-1] = checkGuess()
             currlevel += 1
+    
                 guessRows.append([])
                 feedBack.append((0,0))
                 for _ in 0..<4{
@@ -57,6 +58,8 @@ struct MasterMindModel{
                     
                 
             }
+        }else if isLevelFull() && currlevel >= 9{
+            maxAttempts = true
         }
     }
     
@@ -113,9 +116,6 @@ struct MasterMindModel{
         
     }
 
-    
-    mutating func reset(){
-        MasterMindModel.sharedModel = MasterMindModel()
-    }
 
+ 
 }

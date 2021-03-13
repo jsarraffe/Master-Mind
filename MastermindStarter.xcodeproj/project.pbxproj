@@ -17,6 +17,8 @@
 		3EC75CEB25F0034300C80AF2 /* GuessArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC75CEA25F0034300C80AF2 /* GuessArea.swift */; };
 		3EC75CEE25F0038200C80AF2 /* PaletteArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC75CED25F0038200C80AF2 /* PaletteArea.swift */; };
 		3EC75CF125F003F100C80AF2 /* GameCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC75CF025F003F100C80AF2 /* GameCircle.swift */; };
+		BF03EC8D25FC4AF6006C626A /* GameOver.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF03EC8C25FC4AF6006C626A /* GameOver.swift */; };
+		BF03EC9025FC5500006C626A /* MasterMindApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF03EC8F25FC5500006C626A /* MasterMindApp.swift */; };
 		BFB518A225F4416500C7DEE7 /* MasterMindModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB518A125F4416500C7DEE7 /* MasterMindModel.swift */; };
 		BFB518A525F4417F00C7DEE7 /* MasterMindViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB518A425F4417F00C7DEE7 /* MasterMindViewModel.swift */; };
 /* End PBXBuildFile section */
@@ -34,6 +36,8 @@
 		3EC75CEA25F0034300C80AF2 /* GuessArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessArea.swift; sourceTree = "<group>"; };
 		3EC75CED25F0038200C80AF2 /* PaletteArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaletteArea.swift; sourceTree = "<group>"; };
 		3EC75CF025F003F100C80AF2 /* GameCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCircle.swift; sourceTree = "<group>"; };
+		BF03EC8C25FC4AF6006C626A /* GameOver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOver.swift; sourceTree = "<group>"; };
+		BF03EC8F25FC5500006C626A /* MasterMindApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterMindApp.swift; sourceTree = "<group>"; };
 		BFB518A125F4416500C7DEE7 /* MasterMindModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterMindModel.swift; sourceTree = "<group>"; };
 		BFB518A425F4417F00C7DEE7 /* MasterMindViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterMindViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -78,6 +82,8 @@
 				BFB518A125F4416500C7DEE7 /* MasterMindModel.swift */,
 				3EC75CD425EF496B00C80AF2 /* GameView.swift */,
 				BFB518A425F4417F00C7DEE7 /* MasterMindViewModel.swift */,
+				BF03EC8C25FC4AF6006C626A /* GameOver.swift */,
+				BF03EC8F25FC5500006C626A /* MasterMindApp.swift */,
 			);
 			path = MastermindStarter;
 			sourceTree = "<group>";
@@ -173,7 +179,9 @@
 			files = (
 				3EC75CEE25F0038200C80AF2 /* PaletteArea.swift in Sources */,
 				3EC75CEB25F0034300C80AF2 /* GuessArea.swift in Sources */,
+				BF03EC9025FC5500006C626A /* MasterMindApp.swift in Sources */,
 				3EC75CD125EF496B00C80AF2 /* AppDelegate.swift in Sources */,
+				BF03EC8D25FC4AF6006C626A /* GameOver.swift in Sources */,
 				3EC75CD325EF496B00C80AF2 /* SceneDelegate.swift in Sources */,
 				BFB518A525F4417F00C7DEE7 /* MasterMindViewModel.swift in Sources */,
 				3EC75CF125F003F100C80AF2 /* GameCircle.swift in Sources */,

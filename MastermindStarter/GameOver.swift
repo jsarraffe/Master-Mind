@@ -9,12 +9,27 @@ import SwiftUI
 
 struct GameOver: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Text("NICE TRY, this is the CORRECT SOLUTION")
+        HStack{
+        ForEach (0..<4) { idx in
+            GameCircle(diameter: 60, color: colorsList[MasterMindViewModel.sharedView.model.solutions[idx]], id: idx)
+           
+            }
+            Button(action: {
+                GameView()
+                    .transition(.slide)
+                    .animation(.spring())
+            }) {
+                Text("Button label")
+          }
+        }
+
     }
 }
 
 struct GameOver_Previews: PreviewProvider {
     static var previews: some View {
         GameOver()
+            .background(Image("mastermindWallpaper"))
     }
 }

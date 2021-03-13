@@ -33,12 +33,15 @@ class MasterMindViewModel: ObservableObject{
     }
     
     func reset(){
-      
-        MasterMindViewModel.sharedView = MasterMindViewModel()
-    
+        model = MasterMindModel()
+        print(model.didWin)
+        print(model.currlevel)
     }
     
 
-
+    
+    
+    
+  
     
 }

@@ -14,8 +14,8 @@
             filePath = "MastermindStarter/Views/GuessArea.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "91"
-            endingLineNumber = "91"
+            startingLineNumber = "82"
+            endingLineNumber = "82"
             landmarkName = "body"
             landmarkType = "24">
          </BreakpointContent>
@@ -23,33 +23,81 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "A5B7A49B-C2AB-40C8-B170-3F717A76C057"
-            shouldBeEnabled = "No"
+            uuid = "78614227-0C54-4DE3-A09E-CDD6004BC6C6"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MastermindStarter/MasterMindModel.swift"
+            filePath = "MastermindStarter/Views/GuessArea.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "120"
-            endingLineNumber = "120"
-            landmarkName = "MasterMindModel"
-            landmarkType = "14">
+            startingLineNumber = "86"
+            endingLineNumber = "86"
+            landmarkName = "body"
+            landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "6C1E9725-CE60-4542-9214-A9E5F5F0CB57"
+            uuid = "5239701E-C5D6-47F4-92C8-E380B7421852"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MastermindStarter/Views/GuessArea.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "60CB6554-5404-444B-9754-F39060080B1A"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MastermindStarter/MasterMindModel.swift"
+            filePath = "MastermindStarter/Views/GuessArea.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "118"
-            endingLineNumber = "118"
-            landmarkName = "reset()"
-            landmarkType = "7">
+            startingLineNumber = "74"
+            endingLineNumber = "74"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "60CB6554-5404-444B-9754-F39060080B1A - 4334b19f820a9efe"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Int) -&gt; SwiftUI._ConditionalContent&lt;SwiftUI.Button&lt;MastermindStarter.GameCircle&gt;, MastermindStarter.GameCircle&gt; in closure #1 () -&gt; SwiftUI.ForEach&lt;Swift.Range&lt;Swift.Int&gt;, Swift.Int, SwiftUI._ConditionalContent&lt;SwiftUI.Button&lt;MastermindStarter.GameCircle&gt;, MastermindStarter.GameCircle&gt;&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.HStack&lt;SwiftUI.ForEach&lt;Swift.Range&lt;Swift.Int&gt;, Swift.Int, SwiftUI._ConditionalContent&lt;SwiftUI.Button&lt;MastermindStarter.GameCircle&gt;, MastermindStarter.GameCircle&gt;&gt;&gt;, MastermindStarter.FeedbackArea)&gt; in MastermindStarter.GuessRow.body.getter : some"
+                  moduleName = "MastermindStarter"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jsarraffe/Desktop/Development/MasterMindReal/MastermindStarter/Views/GuessArea.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "75"
+                  endingLineNumber = "75"
+                  offsetFromSymbolStart = "834">
+               </Location>
+               <Location
+                  uuid = "60CB6554-5404-444B-9754-F39060080B1A - f0e3a6af5f3ca3e3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in closure #1 (Swift.Int) -&gt; SwiftUI._ConditionalContent&lt;SwiftUI.Button&lt;MastermindStarter.GameCircle&gt;, MastermindStarter.GameCircle&gt; in closure #1 () -&gt; SwiftUI.ForEach&lt;Swift.Range&lt;Swift.Int&gt;, Swift.Int, SwiftUI._ConditionalContent&lt;SwiftUI.Button&lt;MastermindStarter.GameCircle&gt;, MastermindStarter.GameCircle&gt;&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.HStack&lt;SwiftUI.ForEach&lt;Swift.Range&lt;Swift.Int&gt;, Swift.Int, SwiftUI._ConditionalContent&lt;SwiftUI.Button&lt;MastermindStarter.GameCircle&gt;, MastermindStarter.GameCircle&gt;&gt;&gt;, MastermindStarter.FeedbackArea)&gt; in MastermindStarter.GuessRow.body.getter : some"
+                  moduleName = "MastermindStarter"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jsarraffe/Desktop/Development/MasterMindReal/MastermindStarter/Views/GuessArea.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "76"
+                  endingLineNumber = "76"
+                  offsetFromSymbolStart = "33">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

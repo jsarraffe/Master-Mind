@@ -24,29 +24,23 @@ struct GuessArea: View {
     init(diameter: CGFloat) {
         circleDiameter = diameter
         
-        
-        
-        
-        for i in 0..<9{
-    
-            guessLevels.append(GuessRow(circleDiameter: circleDiameter, colors: fourBlankCircles(), id: i))
-        }
-        
+
     }
     var body: some View {
         VStack {
             if viewModel.model.didWin == true{
                 Text("You did It")
+                
             }
             Spacer()
         
 
-            ForEach( (0..<viewModel.model.guessRows.count).reversed(), id: \.self ) { idx in
+            ForEach( (0..<viewModel.model.currlevel).reversed(), id: \.self ) { idx in
                 VStack (alignment: .leading, spacing: 20.0) {
                     Divider()
                     
-                        
-                        guessViewFor(level: idx)
+               GuessRow(circleDiameter: circleDiameter, colors: fourBlankCircles(), id: idx)
+                        //guessViewFor(level: idx)
 
                     
                 }
@@ -54,22 +48,19 @@ struct GuessArea: View {
         }
     }
     func guessViewFor(level: Int) -> some View {
-//        print("guessViewFor level \(level), size: \(size) ")
-        if level == 9{
-            Text("Reset")
-        }
+     
         return  guessLevels[level]
     }
-    mutating func fourBlankCircles() -> [Color] {
-        currentGameRow = viewModel.model.getLevelColors()
+    func fourBlankCircles() -> [Color] {
+        
 
         print(viewModel.model.printGuessRow())
-        return [colorsList[currentGameRow[0]], colorsList[currentGameRow[1]], colorsList[currentGameRow[2]], colorsList[currentGameRow[3]]]
+        return [colorsList[viewModel.model.getLevelColors()[0]], colorsList[viewModel.model.getLevelColors()[1]], colorsList[viewModel.model.getLevelColors()[2]], colorsList[viewModel.model.getLevelColors()[3]]]
     }
 }
 struct GuessRow: View {
     
-    @ObservedObject var viewModel = MasterMindViewModel.sharedView
+    var viewModel = MasterMindViewModel.sharedView
 
     let circleDiameter: CGFloat
     var colors: [Color]
@@ -79,7 +70,7 @@ struct GuessRow: View {
             HStack {
                 ForEach( 0..<4 ) { idx in
                     
-                    if viewModel.model.currentLevel-1 == id && viewModel.model.didWin != true{
+                    if viewModel.model.currlevel-1 == id && viewModel.model.didWin != true{
                         
                         Button(action:{
                             MasterMindViewModel.sharedView.guess(column: idx)
@@ -89,18 +80,13 @@ struct GuessRow: View {
                             GameCircle(diameter: circleDiameter, color: colorsList[viewModel.model.guessRows[id][idx]], id: idx)
                         }
 
-                    }else{
-                        if viewModel.model.didWin == true{
+                    }else {
+                      
+                        
                             GameCircle(diameter: circleDiameter, color: colorsList[viewModel.model.guessRows[id][idx]], id: idx)
                             
-                        }
-                       
-                        
                     }
                     
-                    
-
-
                 }
             }
             FeedbackArea(length: circleDiameter, row: id)

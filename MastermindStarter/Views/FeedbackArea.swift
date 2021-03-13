@@ -14,7 +14,7 @@ struct FeedbackArea: View {
         length / CGFloat(5.0)
     }
     
-    @ObservedObject var viewModel = MasterMindViewModel.sharedView
+    var viewModel = MasterMindViewModel.sharedView
     
     var row: Int
     
