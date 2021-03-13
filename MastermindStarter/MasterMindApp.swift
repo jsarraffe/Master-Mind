@@ -16,8 +16,12 @@ struct MasterMindApp: View {
             
             if viewModel.model.maxAttempts != true{
                 GameView()
+                    .transition(.slide)
+                    .animation(.spring())
             }else{
                 GameOver()
+                    .transition(.slide)
+                    .animation(.spring())
             }
             
            

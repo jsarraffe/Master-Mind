@@ -16,9 +16,8 @@ struct GameOver: View {
            
             }
             Button(action: {
-                GameView()
-                    .transition(.slide)
-                    .animation(.spring())
+                MasterMindViewModel.sharedView.reset()
+                    
             }) {
                 Text("Button label")
           }

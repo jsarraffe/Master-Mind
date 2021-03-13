@@ -14,19 +14,24 @@ struct FeedbackArea: View {
         length / CGFloat(5.0)
     }
     
-    var viewModel = MasterMindViewModel.sharedView
+    @ObservedObject var viewModel = MasterMindViewModel.sharedView
     
     var row: Int
     
     var body: some View {
-       getColorRows()
+        
+        if row < viewModel.model.currlevel{
+            getColorRows()
+            
+        }
+       
     }
     
     func getColorRows() -> some View{
         
         var cols : [Color] = []
         
-        
+       
         for _ in 0..<viewModel.model.feedBack[row].red{
             cols.append(.red)
         }

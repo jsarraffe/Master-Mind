@@ -60,7 +60,7 @@ struct GuessArea: View {
 }
 struct GuessRow: View {
     
-    var viewModel = MasterMindViewModel.sharedView
+    @ObservedObject var viewModel = MasterMindViewModel.sharedView
 
     let circleDiameter: CGFloat
     var colors: [Color]
@@ -80,7 +80,7 @@ struct GuessRow: View {
                             GameCircle(diameter: circleDiameter, color: colorsList[viewModel.model.guessRows[id][idx]], id: idx)
                         }
 
-                    }else {
+                    }else if id < viewModel.model.currlevel{
                       
                         
                             GameCircle(diameter: circleDiameter, color: colorsList[viewModel.model.guessRows[id][idx]], id: idx)

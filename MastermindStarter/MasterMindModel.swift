@@ -29,7 +29,7 @@ struct MasterMindModel{
         didWin = false
         colors = [0,1,2,3,4,5,6,7]
         currlevel = 1
-        guessRows = [[]]
+        guessRows = []
         
         for i in 0..<currlevel{
             guessRows.append([])
@@ -91,9 +91,36 @@ struct MasterMindModel{
         }
         return randomColors
     }
-    
-    
+
     mutating func checkGuess() -> (Int, Int){
+        
+        var red: Int = 0
+        var clear: Int = 0
+        var temp : [Int] = guessRows[currlevel-1]
+        
+        for i in 0..<guessRows[currlevel-1].count{
+            if guessRows[currlevel-1][i] == solutions[i] {
+                red += 1
+                temp[i] = 7
+            }
+            else{
+                if guessRows[currlevel-1].contains(solutions[i]){
+                    clear += 1
+                    
+                    temp[temp.firstIndex(of: solutions[i])!] = 7
+                }
+            }
+            if red >= 4{
+                self.didWin = true
+            }
+            print(didWin)
+        }
+        return (red, clear)
+        
+    }
+    
+    
+    mutating func checkGuessd() -> (Int, Int){
         
         var red: Int = 0
         var clear: Int = 0
