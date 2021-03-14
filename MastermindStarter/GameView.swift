@@ -14,24 +14,25 @@ struct GameView: View {
     
     
     var body: some View {
-            
-        if viewModel.model.didWin == true{
-            Text("Congradulluations you One we")
-                .font(.largeTitle)
-            
-            Button(action:{
-                viewModel.reset()
-            }){
-
-                Text("RESET")
+        
+        VStack{
+            if viewModel.model.didWin == true{
+                GameWin()
+                    .transition(.slide)
+                    .animation(.easeIn)
+               
+                
+            }else{
+                GeometryReader { geometry in
+                    body(geometry)
+                }
+                .padding()
             }
+                
+            
         }
             
         
-            GeometryReader { geometry in
-                body(geometry)
-            }
-            .padding()
 
         
     }
@@ -50,10 +51,39 @@ struct GameView: View {
         return
             VStack{
                 HStack{
-                ForEach (0..<4) { idx in
-                    GameCircle(diameter: 20, color: colorsList[MasterMindViewModel.sharedView.model.solutions[idx]], id: idx)
                     
-                  }
+                if viewModel.model.showSolution == false{
+                Button(action:{
+                    viewModel.model.showSolution = true
+                })
+                
+
+                {
+                    Text("Tap to Show Solution")
+                        .background(Color.blue)
+                        .foregroundColor(.white)
+                        .font(.title3)
+                        .cornerRadius(25)
+                        
+                        
+                        
+                        
+                }
+                }
+                if viewModel.model.showSolution == true{
+                HStack{
+                    
+                        ForEach (0..<4) { idx in
+                            GameCircle(diameter: 20, color: colorsList[MasterMindViewModel.sharedView.model.solutions[idx]], id: idx)
+
+                    }
+                                    
+                    
+                }
+                }
+                    Text("Attemps Left: \(10-viewModel.model.currlevel)")
+                        .bold()
+                        .foregroundColor(.gray)
                 }
             HStack(alignment: .center) {
                 PaletteArea(colors: colors, circleDiameter: largeCircleDiameter)

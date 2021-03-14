@@ -19,6 +19,7 @@
 		3EC75CF125F003F100C80AF2 /* GameCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC75CF025F003F100C80AF2 /* GameCircle.swift */; };
 		BF03EC8D25FC4AF6006C626A /* GameOver.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF03EC8C25FC4AF6006C626A /* GameOver.swift */; };
 		BF03EC9025FC5500006C626A /* MasterMindApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF03EC8F25FC5500006C626A /* MasterMindApp.swift */; };
+		BF03EC9325FDA1EC006C626A /* GameWin.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF03EC9225FDA1EC006C626A /* GameWin.swift */; };
 		BFB518A225F4416500C7DEE7 /* MasterMindModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB518A125F4416500C7DEE7 /* MasterMindModel.swift */; };
 		BFB518A525F4417F00C7DEE7 /* MasterMindViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB518A425F4417F00C7DEE7 /* MasterMindViewModel.swift */; };
 /* End PBXBuildFile section */
@@ -38,6 +39,7 @@
 		3EC75CF025F003F100C80AF2 /* GameCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCircle.swift; sourceTree = "<group>"; };
 		BF03EC8C25FC4AF6006C626A /* GameOver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOver.swift; sourceTree = "<group>"; };
 		BF03EC8F25FC5500006C626A /* MasterMindApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterMindApp.swift; sourceTree = "<group>"; };
+		BF03EC9225FDA1EC006C626A /* GameWin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameWin.swift; sourceTree = "<group>"; };
 		BFB518A125F4416500C7DEE7 /* MasterMindModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterMindModel.swift; sourceTree = "<group>"; };
 		BFB518A425F4417F00C7DEE7 /* MasterMindViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterMindViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -84,6 +86,7 @@
 				BFB518A425F4417F00C7DEE7 /* MasterMindViewModel.swift */,
 				BF03EC8C25FC4AF6006C626A /* GameOver.swift */,
 				BF03EC8F25FC5500006C626A /* MasterMindApp.swift */,
+				BF03EC9225FDA1EC006C626A /* GameWin.swift */,
 			);
 			path = MastermindStarter;
 			sourceTree = "<group>";
@@ -177,6 +180,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF03EC9325FDA1EC006C626A /* GameWin.swift in Sources */,
 				3EC75CEE25F0038200C80AF2 /* PaletteArea.swift in Sources */,
 				3EC75CEB25F0034300C80AF2 /* GuessArea.swift in Sources */,
 				BF03EC9025FC5500006C626A /* MasterMindApp.swift in Sources */,
@@ -328,7 +332,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"MastermindStarter/Preview Content\"";
-				DEVELOPMENT_TEAM = 6C8FN769YS;
+				DEVELOPMENT_TEAM = XP6D53HG6S;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = MastermindStarter/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
@@ -336,7 +340,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = edu.sonoma.kooshesh.MastermindStarter;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.sonoma.kooshesh.Mastermi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -350,7 +354,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"MastermindStarter/Preview Content\"";
-				DEVELOPMENT_TEAM = 6C8FN769YS;
+				DEVELOPMENT_TEAM = XP6D53HG6S;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = MastermindStarter/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
@@ -358,7 +362,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = edu.sonoma.kooshesh.MastermindStarter;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.sonoma.kooshesh.Mastermi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

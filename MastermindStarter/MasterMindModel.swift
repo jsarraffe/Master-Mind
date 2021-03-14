@@ -9,12 +9,13 @@ import Foundation
 
 struct MasterMindModel{
     
-    let maxRows = 9
+    let maxRows = 8
     var guessRows = [[Int]]()
     var currlevel: Int = 1
     var colors :[Int] = []
     var solutions: [Int] = []
     var didWin: Bool = false
+    var showSolution: Bool = false
     
     var maxAttempts = false
     
